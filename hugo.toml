@@ -1,4 +1,4 @@
-baseURL = "https://your-username.github.io/"
+baseURL = "https://DeveshGiri.github.io/"
 title = "Devesh Giri"
 theme = "hugo-coder"
 languageCode = "en"
@@ -54,7 +54,7 @@ customSCSS = []
 customJS = ["js/animation.js", "js/nav-hover.js"]
 
 # Custom remote JS files
-customRemoteJS = ["https://cdn.jsdelivr.net/npm/typed.js@2.0.12"]
+customRemoteJS = ["https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"]
 
 # If you want to use fathom(https://usefathom.com) for analytics, add this section
 # [params.fathomAnalytics]
