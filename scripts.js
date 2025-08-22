@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.set([leftPanel, rightPanel], { xPercent: 0 });
   gsap.timeline()
-    .to(leftPanel, { xPercent: -100, duration: 0.8, ease: "power3.inOut" }, 0.1)
-    .to(rightPanel, { xPercent: 100, duration: 0.8, ease: "power3.inOut" }, 0.1)
+    .to(leftPanel, { xPercent: -100, duration: 1.8, ease: "power3.inOut" }, 0.1)
+    .to(rightPanel, { xPercent: 100, duration: 1.8, ease: "power3.inOut" }, 0.1)
     .to(overlay, { autoAlpha: 0, duration: 0.2 }, 0.9)
     .fromTo("#name-title",
       { opacity: 0, scale: 0.95 },
