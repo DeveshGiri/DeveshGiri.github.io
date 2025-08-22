@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poetry (हिन्दी-उर्दू) — Devesh Giri</title>
+
+<script>
+  (function () {
+    const saved = localStorage.getItem("theme");
+    const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (saved === "dark" || (!saved && preferDark)) document.documentElement.classList.add("dark");
+    else document.documentElement.classList.remove("dark");
+  })();
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { darkMode: "class" };</script>
+</head>
+<body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+
+<header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+  <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+    <a href="../index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80">DEVESH GIRI</a>
+    <div class="flex items-center gap-5 text-sm">
+      <a href="../about.html" class="hover:opacity-80">About</a>
+      <a href="../research.html" class="hover:opacity-80">Research</a>
+      <a href="../cv.html" class="hover:opacity-80">CV</a>
+      <a href="writings.html" class="hover:opacity-80">Writings</a>
+      <a href="../resources.html" class="hover:opacity-80">Resources</a>
+      <a href="../contact.html" class="hover:opacity-80">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<button id="theme-toggle" class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
+  <span id="theme-icon" aria-hidden="true">🌙</span>
+  <span class="sr-only">Toggle theme</span>
+</button>
+
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
+  <h1 class="text-3xl font-bold mb-4">हिन्दी-उर्दू Poetry</h1>
+  <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
+    Choose a subcategory to explore poems:
+  </p>
+
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="nazm.html" class="group block rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/80 dark:bg-neutral-900/80 backdrop-blur
+    p-6 shadow-sm transition
+    motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out
+    hover:shadow-xl hover:ring-1 hover:ring-blue-500/30
+    motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.02]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+    ">Nazm (नज़्म​)</a>
+    <a href="ghazal.html" class="group block rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/80 dark:bg-neutral-900/80 backdrop-blur
+    p-6 shadow-sm transition
+    motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out
+    hover:shadow-xl hover:ring-1 hover:ring-blue-500/30
+    motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.02]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+    ">Ghazal (ग़ज़ल)</a>
+    <a href="tukbandi.html" class="group block rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/80 dark:bg-neutral-900/80 backdrop-blur
+    p-6 shadow-sm transition
+    motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out
+    hover:shadow-xl hover:ring-1 hover:ring-blue-500/30
+    motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.02]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+    ">Tukbandi (तुकबन्दी)</a>
+    <a href="others.html" class="group block rounded-2xl border border-neutral-200/70 dark:border-neutral-800/70
+    bg-white/80 dark:bg-neutral-900/80 backdrop-blur
+    p-6 shadow-sm transition
+    motion-safe:transition-transform motion-safe:duration-300 motion-safe:ease-out
+    hover:shadow-xl hover:ring-1 hover:ring-blue-500/30
+    motion-safe:hover:-translate-y-1 motion-safe:hover:scale-[1.02]
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+    ">Others</a>
+  </div>
+</main>
+
+<footer class="py-8 text-center text-xs text-neutral-500 dark:text-neutral-400">
+  © <span id="year"></span> Devesh Giri. All rights reserved.
+</footer>
+
+<script src="../scripts.js"></script>
+</body>
+</html>

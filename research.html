@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research — Devesh Giri</title>
+
+    <!-- Apply theme early -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && preferDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+  </head>
+
+  <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+      <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80" data-nav="home">
+          DEVESH GIRI
+        </a>
+        <div class="flex items-center gap-5 text-sm">
+          <a href="about.html" class="hover:opacity-80" data-nav="about">About</a>
+          <a href="research.html" class="hover:opacity-80" data-nav="research">Research</a>
+          <a href="cv.html" class="hover:opacity-80" data-nav="cv">CV</a>
+          <a href="/writings/writings.html" class="hover:opacity-80">Writings</a>
+          <a href="resources.html" class="hover:opacity-80" data-nav="resources">Resources</a>
+          <a href="contact.html" class="hover:opacity-80" data-nav="contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Theme toggle -->
+    <button id="theme-toggle"
+      class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+      <span class="sr-only">Toggle theme</span>
+    </button>
+
+    <!-- Page content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <!-- Page heading -->
+      <h1 class="text-3xl font-bold mb-4">Research</h1>
+
+      <!-- Intro paragraph -->
+      <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
+        My research broadly focusses on topics in Gravitational Wave (Astro-/)Physics and Cosmology. I have worked in several areas from GW Data Analysis, stellar dynamics, and GW systematic studies to modelling observable imprints of different systems on gravitational waves.
+      </p>
+      <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
+        More information soon!
+      </p>
+
+      <!-- Project cards -->
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Example card -->
+        <!-- <div class="bg-white dark:bg-neutral-900 rounded-xl shadow p-6 flex flex-col justify-between">
+          <div>
+            <h2 class="text-xl font-semibold mb-2">Gravitational Waves from Eccentric Inspirals</h2>
+            <p class="text-neutral-700 dark:text-neutral-300 leading-6">
+              Study of waveform generation for LISA sources based on Barack & Cutler 2004 model, focusing on eccentric compact binaries.
+            </p>
+          </div>
+          <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
+            class="mt-4 inline-block px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-500">Read in detail</a>
+        </div> -->
+
+        <!-- Add more cards as needed -->
+      </div>
+
+      <!-- Tabs for categories -->
+      <!-- <div class="flex flex-wrap gap-4 justify-center">
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Gravitational Waves</button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">IMRIs</button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Simulations</button>
+        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Other Projects</button>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-neutral-500 dark:text-neutral-400">
+      © <span id="year"></span> Devesh Giri. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
+    

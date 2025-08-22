@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Devesh Giri</title>
+
+    <!-- Apply saved theme early -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && preferDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+  </head>
+
+  <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+      <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80" data-nav="home">
+          DEVESH GIRI
+        </a>
+        <div class="flex items-center gap-5 text-sm">
+          <a href="about.html" class="hover:opacity-80" data-nav="about">About</a>
+          <a href="research.html" class="hover:opacity-80" data-nav="research">Research</a>
+          <a href="cv.html" class="hover:opacity-80" data-nav="cv">CV</a>
+          <a href="/writings/writings.html" class="hover:opacity-80">Writings</a>
+          <a href="resources.html" class="hover:opacity-80" data-nav="resources">Resources</a>
+          <a href="contact.html" class="hover:opacity-80" data-nav="contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Theme toggle -->
+    <button id="theme-toggle"
+      class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+      <span class="sr-only">Toggle theme</span>
+    </button>
+
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <div class="grid md:grid-cols-3 gap-8 items-start">
+        <!-- Left: photo + social icons -->
+        <div class="flex flex-col items-center gap-4">
+          <img src="assets/profile.jpg" alt="Devesh Giri"
+            class="w-48 h-48 rounded-full object-cover shadow-lg ring-1 ring-black/5 dark:ring-white/10">
+
+          <div class="flex gap-4 text-neutral-600 dark:text-neutral-300">
+            <a href="https://github.com/DeveshGiri" target="_blank" aria-label="GitHub" class="rounded-full p-2 transition motion-safe:duration-200
+            hover:-translate-y-0.5 hover:scale-110 hover:text-purple-500
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+            ">
+              <!-- GitHub icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.649.5.5 5.65.5 12c0 5.092 3.292 9.395 7.865 10.923.575.102.786-.25.786-.557 0-.276-.01-1.007-.015-1.975-3.2.695-3.877-1.542-3.877-1.542-.523-1.33-1.277-1.685-1.277-1.685-1.043-.714.08-.699.08-.699 1.152.081 1.758 1.182 1.758 1.182 1.025 1.756 2.689 1.249 3.346.955.104-.743.4-1.25.727-1.538-2.553-.292-5.235-1.277-5.235-5.685 0-1.256.45-2.282 1.183-3.087-.119-.293-.513-1.468.113-3.062 0 0 .965-.31 3.16 1.178a10.96 10.96 0 0 1 2.877-.387c.977.004 1.962.132 2.877.387 2.195-1.488 3.16-1.178 3.16-1.178.626 1.594.232 2.769.113 3.062.734.805 1.183 1.831 1.183 3.087 0 4.419-2.687 5.389-5.252 5.674.411.353.777 1.042.777 2.102 0 1.517-.013 2.741-.013 3.113 0 .31.21.666.792.553C20.712 21.391 24 17.089 24 12c0-6.35-5.15-11.5-12-11.5z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/deveshgiri" target="_blank" aria-label="LinkedIn" class="rounded-full p-2 transition motion-safe:duration-200
+            hover:-translate-y-0.5 hover:scale-110 hover:text-blue-500
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+            ">
+              <!-- LinkedIn icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.983 3.5a2.5 2.5 0 1 1 .002 5.001A2.5 2.5 0 0 1 4.983 3.5zM2 8.998h6v12H2zM9 9h5.6v1.716h.08c.78-1.48 2.688-3.034 5.52-3.034C22.83 7.682 24 9.876 24 13.535V21h-6v-6.804c0-1.624-.029-3.716-2.262-3.716-2.265 0-2.61 1.77-2.61 3.598V21H9z"/></svg>
+            </a>
+            <a href="mailto:devesh.giri@students.iiserpune.ac.in" aria-label="Email" class="rounded-full p-2 transition motion-safe:duration-200
+            hover:-translate-y-0.5 hover:scale-110 hover:text-red-500
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+            ">
+              <!-- Email icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 13.065 0 6.75V18a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3V6.75l-12 6.315z"/><path d="M24 6V6a3 3 0 0 0-3-3H3a3 3 0 0 0-3 3v.004l12 6.315L24 6z"/></svg>
+            </a>
+            <a href="https://x.com/iamdeveshgiri" target="_blank" aria-label="Twitter (X)" class="rounded-full p-2 transition motion-safe:duration-200
+            hover:-translate-y-0.5 hover:scale-110 hover:text-black-500
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+            ">
+              <!-- Twitter icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2h3.56l-7.78 8.89 9.183 11.11H15.36l-5.28-6.64-6.048 6.64H.476l8.3-9.125L0 2h7.04l4.76 6.027L18.244 2z"/></svg>
+            </a>
+            <a href="https://instagram.com/iamdeveshgiri" target="_blank" aria-label="Instagram" class="rounded-full p-2 transition motion-safe:duration-200
+            hover:-translate-y-0.5 hover:scale-110 hover:text-pink-500
+            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60
+            ">
+              <!-- Instagram icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8.75 2a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75zM12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Bio -->
+        <div class="md:col-span-2 space-y-4">
+          <h1 class="text-3xl font-bold">About Me</h1>
+          <p class="text-neutral-700 dark:text-neutral-300 leading-7">
+            I am Devesh Giri, pursuing a BS-MS degree at the Indian Institute of Science Education and Research (IISER) Pune, India. I am currently a Visiting Master's Thesis Student at the Tata Institute of Fundamental Research (TIFR) Mumbai, working on gravitational wave physics in the research group of Prof. Suvodip Mukherjee. I am interested in a spectrum of things, including Physics, Philosophy and Literature.
+          </p>
+          <p class="text-neutral-700 dark:text-neutral-300 leading-7">
+            
+          </p>
+          <p class="text-neutral-700 dark:text-neutral-300 leading-7">
+            I take formal training in Mathematics and Physics at IISER-Pune. I am an ardent follower of Hindustani Sangeet. Besides science and music, I spend a lot of time reading in and around the domains of politics, philosophy, and logic. I write and love Hindi-Urdu poetry.
+          </p>
+          <p class="text-neutral-700 dark:text-neutral-300 leading-7">
+            In the formal domain, I work on problems broadly related to Gravitational Wave Astrophysics and Cosmology. Besides science research, I am highly passionate about promoting awareness about science and analyzing science pedagogy.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-neutral-500 dark:text-neutral-400">
+      © <span id="year"></span> Devesh Giri. All rights reserved.
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

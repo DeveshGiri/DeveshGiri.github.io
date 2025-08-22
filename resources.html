@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resources — Devesh Giri</title>
+
+    <!-- Apply theme early -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && preferDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+  </head>
+
+  <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+      <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80" data-nav="home">
+          DEVESH GIRI
+        </a>
+        <div class="flex items-center gap-5 text-sm">
+          <a href="about.html" class="hover:opacity-80" data-nav="about">About</a>
+          <a href="research.html" class="hover:opacity-80" data-nav="research">Research</a>
+          <a href="cv.html" class="hover:opacity-80" data-nav="cv">CV</a>
+          <a href="/writings/writings.html" class="hover:opacity-80">Writings</a>
+          <a href="resources.html" class="hover:opacity-80" data-nav="resources">Resources</a>
+          <a href="contact.html" class="hover:opacity-80" data-nav="contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Theme toggle -->
+    <button id="theme-toggle"
+      class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+      <span class="sr-only">Toggle theme</span>
+    </button>
+
+    <!-- Page content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+      <h1 class="text-3xl font-bold mb-6">Resources</h1>
+      <p class="leading-7 text-neutral-700 dark:text-neutral-300">
+        I have always wanted to share some excellent resources for different domains that I have found very useful over the years. I will add them here soon!
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-xs text-neutral-500 dark:text-neutral-400">
+      © <span id="year"></span> Devesh Giri. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+  </body>
+</html>

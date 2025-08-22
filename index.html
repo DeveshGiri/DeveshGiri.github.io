@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Devesh Giri</title>
+
+    <!-- 0) Apply saved theme ASAP to avoid flicker -->
+    <script>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && preferDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+
+    <!-- 1) Tailwind (CDN build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Inter", "system-ui", "ui-sans-serif", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- 2) Libraries for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <meta name="description" content="Devesh Giri — astrophysicist. Physics • Philosophy • Poetry." />
+  </head>
+
+  <body id="home" class="font-display bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+      <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a href="index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80" data-nav="home">
+          DEVESH GIRI
+        </a>
+        <div class="flex items-center gap-5 text-sm">
+          <a href="about.html" class="hover:opacity-80" data-nav="about">About</a>
+          <a href="research.html" class="hover:opacity-80" data-nav="research">Research</a>
+          <a href="cv.html" class="hover:opacity-80" data-nav="cv">CV</a>
+          <a href="writings/writings.html" class="hover:opacity-80" data-nav="writings">Writings</a>
+          <a href="resources.html" class="hover:opacity-80" data-nav="resources">Resources</a>
+          <a href="contact.html" class="hover:opacity-80" data-nav="contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Theme toggle (bottom-left) -->
+    <button id="theme-toggle"
+      class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
+      <span id="theme-icon" aria-hidden="true">🌙</span>
+      <span class="sr-only">Toggle theme</span>
+    </button>
+
+    <!-- Split-screen opening overlay -->
+    <div id="split-overlay" class="fixed inset-0 z-50 pointer-events-none">
+      <div class="absolute inset-y-0 left-0 w-1/2 bg-white dark:bg-neutral-950"></div>
+      <div class="absolute inset-y-0 right-0 w-1/2 bg-white dark:bg-neutral-950"></div>
+    </div>
+
+    <!-- Main hero content -->
+    <main class="min-h-screen flex items-center justify-center px-6 pt-20">
+      <section class="max-w-4xl w-full text-center">
+        <!-- Your photo -->
+        <img src="assets/profile.jpg" alt="Photo of Devesh Giri"
+             class="mx-auto mb-6 w-40 h-40 rounded-full object-cover shadow-lg ring-1 ring-black/5 dark:ring-white/10" />
+
+        <!-- Name -->
+        <h1 id="name-title" class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-3 opacity-0 scale-95">
+          DEVESH GIRI
+        </h1>
+
+        <!-- Typewriter line -->
+        <p class="text-lg sm:text-xl text-neutral-600 dark:text-neutral-300">
+          <span id="typed"></span>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer (optional now) -->
+    <footer class="py-8 text-center text-xs text-neutral-500 dark:text-neutral-400">
+      © <span id="year"></span> Devesh Giri. All rights reserved.
+    </footer>
+
+    <!-- Your site JS -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
