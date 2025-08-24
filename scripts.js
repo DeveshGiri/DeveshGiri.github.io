@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const typedTarget = document.getElementById("typed");
   if (typedTarget && window.Typed) {
     new Typed("#typed", {
-      strings: ["Physics", "Philosophy", "Poetry"],
+      strings: ["Physics", "Philosophy", "Poetry", "Music"],
       typeSpeed: 70,
-      backSpeed: 50,
+      backSpeed: 40,
       backDelay: 900,
       startDelay: 200,
       loop: true,
