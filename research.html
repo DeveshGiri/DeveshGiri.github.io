@@ -9,7 +9,9 @@
     <script>
       (function () {
         const saved = localStorage.getItem("theme");
-        const preferDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const preferDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
         if (saved === "dark" || (!saved && preferDark)) {
           document.documentElement.classList.add("dark");
         } else {
@@ -23,28 +25,43 @@
     <script>
       tailwind.config = { darkMode: "class" };
     </script>
+
+    <!-- MathJax for LaTeX rendering -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
 
   <body class="bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
     <!-- Header -->
-    <header class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
-      <nav class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
-        <a href="index.html" class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80" data-nav="home">
+    <header
+      class="fixed top-0 inset-x-0 z-40 border-b border-neutral-200/70 dark:border-neutral-800/70 bg-white/70 dark:bg-neutral-950/60 backdrop-blur">
+      <nav
+        class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+        <a
+          href="index.html"
+          class="text-sm sm:text-base font-semibold tracking-wide uppercase hover:opacity-80">
           DEVESH GIRI
         </a>
         <div class="flex items-center gap-5 text-sm">
-          <a href="about.html" class="hover:opacity-80" data-nav="about">About</a>
-          <a href="research.html" class="hover:opacity-80" data-nav="research">Research</a>
-          <a href="cv.html" class="hover:opacity-80" data-nav="cv">CV</a>
+          <a href="about.html" class="hover:opacity-80">About</a>
+          <a href="research.html" class="hover:opacity-80">Research</a>
+          <a href="cv.html" class="hover:opacity-80">CV</a>
           <a href="/writings/writings.html" class="hover:opacity-80">Writings</a>
-          <a href="resources.html" class="hover:opacity-80" data-nav="resources">Resources</a>
-          <a href="contact.html" class="hover:opacity-80" data-nav="contact">Contact</a>
+          <a href="resources.html" class="hover:opacity-80">Resources</a>
+          <a href="contact.html" class="hover:opacity-80">Contact</a>
         </div>
       </nav>
     </header>
 
     <!-- Theme toggle -->
-    <button id="theme-toggle"
+    <button
+      id="theme-toggle"
       class="fixed bottom-4 left-4 z-40 px-3 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white/80 dark:bg-neutral-900/80 backdrop-blur text-xs">
       <span id="theme-icon" aria-hidden="true">🌙</span>
       <span class="sr-only">Toggle theme</span>
@@ -52,45 +69,80 @@
 
     <!-- Page content -->
     <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
-      <!-- Page heading -->
       <h1 class="text-3xl font-bold mb-4">Research</h1>
 
-      <!-- Intro paragraph -->
       <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
-        My research broadly focusses on topics in Gravitational Wave (Astro-/)Physics and Cosmology. I have worked in several areas from GW Data Analysis, stellar dynamics, and GW systematic studies to modelling observable imprints of different systems on gravitational waves.
+        My research broadly focusses on topics in Gravitational Wave (Astro-/)Physics
+        and Cosmology. I have worked in several areas from GW data analysis, stellar
+        dynamics, and waveform systematics to modelling observable imprints of
+        different systems on gravitational waves.
       </p>
+
       <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
-        <!-- You can find my publications here: https://inspirehep.net/authors/3084690 or https://arxiv.org/search/gr-qc?searchtype=author&query=Giri,+Devesh-->
-        You can find my publications on <a href="https://inspirehep.net/authors/3084690" target="_blank" class="text-blue-600 hover:underline">InspireHEP</a> or <a href="https://arxiv.org/search/gr-qc?searchtype=author&query=Giri,+Devesh" target="_blank" class="text-blue-600 hover:underline">arXiv</a>.
-      </p>
-      <p class="text-neutral-700 dark:text-neutral-300 mb-8 leading-7">
-        More information soon!
+        You can find my publications on
+        <a
+          href="https://inspirehep.net/authors/3084690"
+          target="_blank"
+          class="text-blue-600 hover:underline">
+          InspireHEP
+        </a>
+        or
+        <a
+          href="https://arxiv.org/search/gr-qc?searchtype=author&query=Giri,+Devesh"
+          target="_blank"
+          class="text-blue-600 hover:underline">
+          arXiv
+        </a>.
       </p>
 
       <!-- Project cards -->
-      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        <!-- Example card -->
-        <!-- <div class="bg-white dark:bg-neutral-900 rounded-xl shadow p-6 flex flex-col justify-between">
-          <div>
-            <h2 class="text-xl font-semibold mb-2">Gravitational Waves from Eccentric Inspirals</h2>
-            <p class="text-neutral-700 dark:text-neutral-300 leading-6">
-              Study of waveform generation for LISA sources based on Barack & Cutler 2004 model, focusing on eccentric compact binaries.
-            </p>
-          </div>
-          <a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank"
-            class="mt-4 inline-block px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-500">Read in detail</a>
-        </div> -->
+      <!-- <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+       -->
+      <div class="space-y-6 mb-8">
+        <div
+  class="bg-white dark:bg-neutral-900 rounded-xl shadow p-6 md:p-8 transition hover:shadow-lg">
+  
+  <!-- Title -->
+  <h2 class="text-2xl font-semibold mb-3 leading-snug">
+    Sub-Solar Mass Intermediate Mass Ratio Inspirals: Waveform Systematics and Detection Prospects with Gravitational Waves
+  </h2>
 
-        <!-- Add more cards as needed -->
+  <!-- Meta line -->
+  <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-4">
+    Preprint · Gravitational Waves · IMRIs
+  </p>
+
+  <!-- Abstract preview -->
+  <p class="text-neutral-700 dark:text-neutral-300 leading-7 max-w-4xl">
+    We investigate the detectability and waveform systematics of sub-solar mass
+    intermediate mass-ratio inspirals (SSM-IMRIs), characterized by mass ratios
+    $q \sim 10^{2}\text{–}10^{4}$. Using the black-hole perturbation-theory surrogate
+    model <span class="font-mono">BHPTNRSur1dq1e4</span>, we assess the performance of
+    current phenomenological waveform families and identify significant losses in
+    effectualness when higher-order modes are neglected…
+  </p>
+
+  <!-- Actions -->
+  <div class="mt-5 flex flex-wrap gap-4">
+    <a
+      href="https://arxiv.org/abs/2511.13324"
+      target="_blank"
+      class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-500">
+      Read on arXiv
+    </a>
+
+    <!-- Optional future internal page -->
+    <!--
+    <a
+      href="research/ssm-imri.html"
+      class="inline-flex items-center px-4 py-2 border border-neutral-300 dark:border-neutral-700 text-sm rounded hover:bg-neutral-100 dark:hover:bg-neutral-800">
+      Project page
+    </a>
+    -->
+  </div>
+</div>
+
       </div>
-
-      <!-- Tabs for categories -->
-      <!-- <div class="flex flex-wrap gap-4 justify-center">
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Gravitational Waves</button>
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">IMRIs</button>
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Simulations</button>
-        <button class="px-4 py-2 bg-neutral-200 dark:bg-neutral-800 rounded-full hover:bg-neutral-300 dark:hover:bg-neutral-700 text-sm font-medium">Other Projects</button>
-      </div> -->
     </main>
 
     <!-- Footer -->
@@ -102,4 +154,3 @@
     <script src="scripts.js"></script>
   </body>
 </html>
-    
